@@ -89,6 +89,7 @@
 <body>
     <div class="form_wrapper">
         <div  class="form_header"><h1>Register</h1></div>
+        <div class="formInput">
 
             <Form action="{{ route('register')}}" method="POST">
                 @method('POST')
@@ -102,8 +103,10 @@
                 <label for="password">password</label>
                 <input type="password" id="password" name="password" required>
         
+                <a href="{{route('loginForm')}}">have account login here</a><br>
                 <button type="submit">register</button>
             </Form>
+        </div>
         </div>
     </div>
     

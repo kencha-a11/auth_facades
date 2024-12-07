@@ -65,7 +65,9 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
             padding: 20px;
             width: 100%;
-            max-width: 400px;
+            /* max-width: 400px; */
+
+            margin-top: 20px;
         }
 
         input{
@@ -73,6 +75,7 @@
             border-radius: 5px;
             margin-bottom: 10px;
             padding: 7px;
+            width: 95%;
         }
 
         label{
@@ -92,6 +95,10 @@
         button:hover{
             opacity: .7;
             background:linear-gradient(to bottom,rgb(56, 5, 90), rgb(19, 18, 18) ) ;
+        }
+
+        textarea{
+            width: 100%;
         }
     </style>
 </head>
@@ -118,8 +125,8 @@
                 <label for="age">Age:</label>
                 <input type="text" name="age" value="{{ old('age') }}" required><br>
             
-                <label for="bio">Bio:</label>
-                <textarea name="bio" required>{{ old('bio') }}</textarea><br>
+                <label for="bio">Bio:</label><br>
+                <textarea name="bio" id="bio" required>{{ old('bio') }}</textarea><br>
             
                 <label for="profile_image">Profile Image:</label>
                 <input type="file" name="profile_image" required><br>

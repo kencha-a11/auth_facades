@@ -26,6 +26,8 @@
             animation: gradientBG 10s ease infinite;
             justify-content: center;
             align-items: center;
+
+            text-align: center;
             
             /* background-color: rgb(42, 42, 44); */
         }
@@ -76,16 +78,18 @@
             border-radius: 5px;
             margin-bottom: 10px;
             padding: 7px;
+
         }
 
         .dash_show, p, h2{
             color:white;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
     <div class="dash_wrapper">
-        <div class="dash_header"><h1> Welcome, {{Auth::user()->profile->name}}!</h1><h1>This is your dashboard.</h1></div>
+        <div class="dash_header"><h1> Welcome, {{Auth::user()->profile->name}}! This is your dashboard.</h1></div>
         <div class="dash_show">
             <h2>Your Information</h2>
             <p>Name: {{ Auth::user()->profile ? Auth::user()->profile->name : 'No profile available' }}</p>

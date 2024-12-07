@@ -66,6 +66,8 @@
             padding: 20px;
             width: 100%;
             max-width: 400px;
+
+            margin-top: 20px;
         }
 
         input{
@@ -108,6 +110,8 @@
                 <label for="password">password</label>
                 <input type="password" id="password" name="password" required>
         
+                <a href="{{route('registerForm')}}"><p>no account register here</p></a>
+    
                 <button type="submit">login</button>
             </Form>
         </div>
