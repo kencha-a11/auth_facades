@@ -11,10 +11,10 @@ Route::get('/', function () {
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', [AuthController::class, 'registerForm'])->name('registerForm');
-    Route::post('/register/post', [AuthController::class, 'register'])->name('register');
+    Route::post('/register', [AuthController::class, 'register'])->name('register');
 
     Route::get('/login', [AuthController::class, 'loginForm'])->name('loginForm');
-    Route::post('/login/post', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
 });
 
 
