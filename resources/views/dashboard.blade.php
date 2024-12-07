@@ -9,10 +9,10 @@
             margin: 0;
             padding: 0;
             font-family:Verdana, Tahoma, sans-serif;
-            
+
         }
 
-        h1{ 
+        h1{
             display:flex;
             text-align: center;
             color: white;
@@ -28,7 +28,7 @@
             align-items: center;
 
             text-align: center;
-            
+
             /* background-color: rgb(42, 42, 44); */
         }
 
@@ -92,6 +92,7 @@
         <div class="dash_header"><h1> Welcome, {{Auth::user()->profile->name}}! This is your dashboard.</h1></div>
         <div class="dash_show">
             <h2>Your Information</h2>
+            <p>Username: {{Auth::user()->name}}</p>
             <p>Name: {{ Auth::user()->profile ? Auth::user()->profile->name : 'No profile available' }}</p>
             <p>Bio: {{ Auth::user()->profile ? Auth::user()->profile->bio : 'No profile available' }}</p>
             <p>Age: {{ Auth::user()->profile ? Auth::user()->profile->age : 'No profile available' }}</p>
@@ -109,6 +110,6 @@
             </form>
         </div>
     </div>
-    
+
 </body>
 </html>

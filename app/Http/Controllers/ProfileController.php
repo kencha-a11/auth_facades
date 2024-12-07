@@ -14,7 +14,7 @@ class ProfileController extends Controller
     }
 
     public function store(Request $request)
-{
+    {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'age' => 'required|string|max:255',
@@ -23,20 +23,22 @@ class ProfileController extends Controller
         ]);
 
         $imagePath = null;
-        if ($request->hasFile('profile_image') && $request->file('profile_image')->isValid()) {
-            $imagePath = $request->file('profile_image')->store('profiles', 'public');
+        if ($request->hasFile('profile_image')) {
+            $imagePath = $request->file('profile_image')->store('profile.store', 'public');
         }
 
-        Profile::create([
-            'user_id' => Auth::id(),
-            'name' => $validated['name'],
-            'age' => $validated['age'],
-            'bio' => $validated['bio'],
-            'image' => $imagePath,
-        ]);
-
-        return redirect()->route('dashboard')->with('success', 'Profile created successfully');
+        try{
+            Profile::create([
+                'user_id' => Auth::id(),
+                'name' => $validated['name'],
+                'age' => $validated['age'],
+                'bio' => $validated['bio'],
+                'image' => $imagePath
+            ]);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
     }
+        return redirect('/dashboard');
 
-
+    }
 }

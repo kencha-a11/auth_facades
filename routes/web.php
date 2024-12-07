@@ -24,5 +24,5 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
-    Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
+    Route::post('/profile/store', [ProfileController::class, 'store'])->name('profile.store');
 });
